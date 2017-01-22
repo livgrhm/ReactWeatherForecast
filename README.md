@@ -78,6 +78,7 @@ With more time, there is much more that could be done with the app.
   * Allow the user to change the units to suit them/automatically select based on locality (Farenheight vs Celcius)
   * Change colors of 5 day forecast to represent daily weather (rather than same as today's weather)
   * Auto refresh the data to keep up to date without user having to interact
+  * Timezone handling - currently doesn't convert time into local, and unclear it's a 3hr forecast
 * Architecture/Code
   * Cache the API calls to avoid unnecessary requests (this API includes a 3hr forecast so not needed to hit API on every reload)
   * Improved suite of tests to make sure future changes don't break the app, ensure robustness
