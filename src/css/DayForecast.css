@@ -1,0 +1,23 @@
+.dayForecast {
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.dayForecast .weather-icon {
+  height: 20rem;
+  fill: #FFFFFF;
+}
+.dayForecast .current-temp {
+  font-size: 32px;
+  margin-top: 10px;
+}
+.dayForecast .current-main {
+  font-size: 24px;
+}
+.dayForecast .current-time {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 24px;
+}

@@ -1,0 +1,90 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Overpass');
+$base-font: 'Overpass';
+
+/* Colors */
+$base-color: #FFFFFF;
+$clear-color: #F39C12;
+$clouds-color: #1ABC9C;
+$rain-color: #9b59b6;
+$snow-color: #3498db;
+$wind-color: #95a5a6;
+$extreme-color: #2c3e50;
+
+/* Basic Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $base-font, sans-serif;
+}
+
+/* App Base Styles */
+.App {
+    color: $base-color;
+
+    .today, .week {
+        border: 1px solid $base-color;
+    }
+
+    /* App Colors; Based on the weather type */
+    &.Clear {
+        background-color: $clear-color;
+
+        .week {
+            background-color: darken($clear-color, 8%)!important;
+        }
+    }
+
+    &.Clouds {
+        background-color: $clouds-color;
+
+        .week {
+            background-color: darken($clouds-color, 8%)!important;
+        }
+    }
+
+    &.Rain {
+        background-color: $rain-color;
+
+        .week {
+            background-color: darken($rain-color, 8%)!important;
+        }
+    }
+
+    &.Snow {
+        background-color: $snow-color;
+
+        .week {
+            background-color: darken($snow-color, 8%)!important;
+        }
+    }
+
+    &.Wind {
+        background-color: $wind-color;
+
+        .week {
+            background-color: darken($wind-color, 8%)!important;
+        }
+    }
+
+    &.Extreme {
+        background-color: $extreme-color;
+
+        .week {
+            background-color: darken($extreme-color, 8%)!important;
+        }
+    }
+
+    /* Media queries, keep width of app small depending on browser size */
+    @media(min-width:576px) {
+        &.container {
+            width: 60%;
+        }
+    }
+
+    @media(min-width:768px) {
+        &.container {
+            width: 40%;
+        }
+    }
+}

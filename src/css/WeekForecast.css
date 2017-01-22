@@ -1,0 +1,14 @@
+.weekForecast .day {
+  padding: 1rem 0;
+}
+.weekForecast .day img {
+  height: 5rem;
+}
+.weekForecast .day div {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+.weekForecast .day .temp {
+  font-size: 16px;
+}

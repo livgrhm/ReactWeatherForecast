@@ -1,0 +1,25 @@
+{
+  "name": "ReactWeatherForecast",
+  "version": "0.1.0",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-ruby-sass": "^2.1.1",
+    "react-autocomplete": "^1.4.0",
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

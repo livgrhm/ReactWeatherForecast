@@ -1,0 +1,22 @@
+.weekForecast {
+
+    .day {
+
+        padding: 1rem 0;
+
+        img {
+            height: 5rem;
+        }
+
+        div {
+            display: inline-block;
+            vertical-align: middle;
+            float: none;
+        }
+
+        .temp {
+            font-size: 16px;
+
+        }
+    }
+}
