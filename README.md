@@ -7,6 +7,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The app is publicly hosted here: [Heroku](http://dry-badlands-87551.herokuapp.com/).
 
 ## Contents
+- [Dependencies](#dependencies)
+- [Installation/Building the App](#installation)
+- [Running the App](#running-the-app)
+- [Testing the App](#testing-the-app)
+- [Plugins/Packages Used](#plugins)
+  * [[Gulp](http://gulpjs.com/)](#-gulp--http---gulpjscom--)
+  * [[react-autocomplete](https://github.com/reactjs/react-autocomplete)](#-react-autocomplete--https---githubcom-reactjs-react-autocomplete-)
+  * [[react-bootstrap](https://react-bootstrap.github.io/)](#-react-bootstrap--https---react-bootstrapgithubio--)
+- [Future Upgrades](#future)
+- [References](#references)
+- [License](#license)
 
 <a name="dependencies"></a>
 ## Dependencies
