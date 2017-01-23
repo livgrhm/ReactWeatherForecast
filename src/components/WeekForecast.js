@@ -15,7 +15,7 @@ class DayForecast extends Component {
 			<Row className="show-grid day">
 				<Col xs={6}>{DAYS_OF_WEEK[d.getDay()]}</Col>
 				<Col xs={3} className="text-right">
-					<img src={WEATHER_ICONS[this.props.day.main]} />
+					<img src={WEATHER_ICONS[this.props.day.main]} role="presentation" />
 				</Col>
 				<Col xs={3} className="text-right temp">{this.props.day.temp}&deg;</Col>
 			</Row>

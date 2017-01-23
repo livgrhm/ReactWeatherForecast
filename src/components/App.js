@@ -38,34 +38,40 @@ let App = React.createClass({
         // Build object that groups weather forecasts by day
         let weatherList = {};
         for (let i in forecast) {
-            let currDate = forecast[i].dt_txt.substring(0, 10);
-            if (weatherList[currDate] === undefined) {
-                weatherList[currDate] = [];
+            if (forecast.hasOwnProperty(i)) {
+                let currDate = forecast[i].dt_txt.substring(0, 10);
+                if (weatherList[currDate] === undefined) {
+                    weatherList[currDate] = [];
+                }
+                // create weather object
+                let weatherObj = {
+                    date: forecast[i].dt_txt,
+                    time: forecast[i].dt_txt.substring(11, forecast[i].dt_txt.length-3),
+                    desc: forecast[i].weather[0].description,
+                    main: forecast[i].weather[0].main,
+                    temp: Number((forecast[i].main.temp).toFixed(0)),
+                    icon: WEATHER_ICONS[forecast[i].weather[0].main]
+                };
+                weatherList[currDate].push(weatherObj);
             }
-            // create weather object
-            let weatherObj = {
-                date: forecast[i].dt_txt,
-                time: forecast[i].dt_txt.substring(11, forecast[i].dt_txt.length-3),
-                desc: forecast[i].weather[0].description,
-                main: forecast[i].weather[0].main,
-                temp: Number((forecast[i].main.temp).toFixed(0)),
-                icon: WEATHER_ICONS[forecast[i].weather[0].main]
-            };
-            weatherList[currDate].push(weatherObj);
         }
         // Get today's weather to display and remove from array
         let today = this.getToday();
         let currentWeather = null;
         for (let first in weatherList) {
-            currentWeather = weatherList[first][0];
-            break;
+            if (weatherList.hasOwnProperty(first)) {
+                currentWeather = weatherList[first][0];
+                break;
+            }
         }
         delete weatherList[today];
 
         // Create array of the rest of the week's weather
         let weatherArray = [];
         for (let i in weatherList) {
-            weatherArray.push(weatherList[i]);
+            if (weatherList.hasOwnProperty(i)) {
+                weatherArray.push(weatherList[i]);
+            }
         }
 
         // Set the component state

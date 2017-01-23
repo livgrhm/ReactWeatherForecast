@@ -4,7 +4,7 @@ import Autocomplete from 'react-autocomplete';
 import { Button } from 'react-bootstrap';
 
 /* Search/Autocomplete utility functions */
-import { getLocations, matchSearchTerm, sortLocations, styles, getLocation } from '../lib/search';
+import { getLocations, matchSearchTerm, sortLocations, styles } from '../lib/search';
 
 /* Component Styles */
 import '../css/SearchForm.css';
