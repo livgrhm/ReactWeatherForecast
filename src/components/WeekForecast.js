@@ -11,6 +11,17 @@ import '../css/WeekForecast.css';
 class DayForecast extends Component {
 	render() {
 		var d = new Date(this.props.day.date);
+		/**
+		 * Attempt at tracking iphone bug
+		 **/
+		console.log("LOGGING DATE: " + d);
+		console.log("LOGGING DATE: " + DAYS_OF_WEEK[d.getDay()])
+		if (!d || d === undefined) {
+			console.log("DATE ERROR: " + this.props.day);
+		}
+		if (d.getDay() < 0 || d.getDay() > 7) {
+			console.log("DATE ERROR OUT OF RANGE: " + d.getDay());
+		}
 		return (
 			<Row className="show-grid day">
 				<Col xs={6}>{DAYS_OF_WEEK[d.getDay()]}</Col>
