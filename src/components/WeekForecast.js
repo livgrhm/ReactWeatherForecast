@@ -14,9 +14,10 @@ class DayForecast extends Component {
 		/**
 		 * Attempt at tracking iphone bug
 		 **/
-		console.log("LOGGING DATE: " + this.props.day);
-		console.log("LOGGING DATE: " + d);
-		console.log("LOGGING DATE: " + DAYS_OF_WEEK[d.getDay()])
+		console.log("LOGGING DATE 1: " + JSON.stringify(this.props.day));
+		console.log("LOGGING DATE 2: " + this.props.day.date);
+		console.log("LOGGING DATE 3: " + d);
+		console.log("LOGGING DATE 4: " + DAYS_OF_WEEK[d.getDay()])
 		if (!d || d === undefined) {
 			console.log("DATE ERROR: " + this.props.day);
 		}
