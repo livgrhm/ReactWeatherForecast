@@ -10,20 +10,18 @@ import '../css/WeekForecast.css';
 
 class DayForecast extends Component {
 	render() {
-		var d = new Date(this.props.day.date);
-		/**
-		 * Attempt at tracking iphone bug
-		 **/
-		console.log("LOGGING DATE 1: " + JSON.stringify(this.props.day));
-		console.log("LOGGING DATE 2: " + this.props.day.date);
-		console.log("LOGGING DATE 3: " + d);
-		console.log("LOGGING DATE 4: " + DAYS_OF_WEEK[d.getDay()])
+		var dateSplit = this.props.day.date.split(' ');
+		var dt = dateSplit[0].split('-');	// get date
+		var tm = dateSplit[1].split(':');	// get time
+		var d = new Date(dt[0], dt[1], dt[2], tm[0]);
+
 		if (!d || d === undefined) {
-			console.log("DATE ERROR: " + this.props.day);
+			console.err("DATE ERROR: " + this.props.day);
 		}
 		if (d.getDay() < 0 || d.getDay() > 7) {
-			console.log("DATE ERROR OUT OF RANGE: " + d.getDay());
+			console.err("DATE ERROR OUT OF RANGE: " + d.getDay());
 		}
+
 		return (
 			<Row className="show-grid day">
 				<Col xs={6}>{DAYS_OF_WEEK[d.getDay()]}</Col>
@@ -38,20 +36,13 @@ class DayForecast extends Component {
 
 class WeekForecast extends Component {
 	renderDay(idx, data) {
-		console.log("renderDay");
-		console.log(idx);
-		console.log(JSON.stringify(data));
 		return <DayForecast key={idx} day={data} />
 	}
 	render() {
 		var rows = [];
-
 		for (var i=0; i < this.props.forecast.length; i++) {
 			var item = this.props.forecast[i][4]; // get the midday reading
-			console.log("item");
-			console.log(item);
 			var rend = this.renderDay(i, item);
-			console.log(rend);
 		    rows.push(rend);
 		}
 		return (
