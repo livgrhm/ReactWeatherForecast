@@ -37,16 +37,21 @@ class DayForecast extends Component {
 
 class WeekForecast extends Component {
 	renderDay(idx, data) {
+		console.log("renderDay");
+		console.log(idx);
+		console.log(JSON.stringify(data));
 		return <DayForecast key={idx} day={data} />
 	}
 	render() {
 		var rows = [];
 
 		for (var i=0; i < this.props.forecast.length; i++) {
-			console.log("day forecast");
-			console.log(this.props.forecast[i]);
 			var item = this.props.forecast[i][4]; // get the midday reading
-		    rows.push(this.renderDay(i, item));
+			console.log("item");
+			console.log(item);
+			var rend = this.renderDay(i, item);
+			console.log(rend);
+		    rows.push(rend);
 		}
 		return (
 			<div className="weekForecast">
