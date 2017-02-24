@@ -14,6 +14,7 @@ class DayForecast extends Component {
 		/**
 		 * Attempt at tracking iphone bug
 		 **/
+		console.log("LOGGING DATE: " + this.props.day);
 		console.log("LOGGING DATE: " + d);
 		console.log("LOGGING DATE: " + DAYS_OF_WEEK[d.getDay()])
 		if (!d || d === undefined) {
@@ -40,7 +41,10 @@ class WeekForecast extends Component {
 	}
 	render() {
 		var rows = [];
+
 		for (var i=0; i < this.props.forecast.length; i++) {
+			console.log("day forecast");
+			console.log(this.props.forecast[i]);
 			var item = this.props.forecast[i][4]; // get the midday reading
 		    rows.push(this.renderDay(i, item));
 		}
